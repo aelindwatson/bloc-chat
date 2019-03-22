@@ -39,7 +39,7 @@ render() {
       <section className="roomListContainer">
          <h3>Bloc Chat Rooms</h3>
         {this.state.rooms.map((room, index) => {
-          return <li key={index}>{room.name}</li>;
+          return <li key={index} onClick={ () => this.props.setActiveRoom(room)}>{room.name}</li>;
         })}
       </section>
       <form onSubmit={ (e) => this.createRoom(e) }>
