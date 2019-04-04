@@ -5,7 +5,7 @@ class User extends Component {
     super(props);
 
 
-  this.signInWithPopUp = this.signInWithPopUp.bind(this);
+  this.signInWithPopup = this.signInWithPopup.bind(this);
   this.signOut = this.signOut.bind(this);
 }
 
@@ -15,9 +15,9 @@ componentDidMount() {
   });
 }
 
-signInWithPopUp() {
-  const provider = new this.props.firebase.auth.GoogleAuthProvider();
-  this.props.firebase.auth().signInWithPopUp( provider ).then(function(result) {
+signInWithPopup() {
+  const provider = new this.props.firebase.auth.GoogleAuthProvider(); 
+  this.props.firebase.auth().signInWithPopup( provider ).then(function(result) {
     console.log(result);
   });
 }
@@ -30,7 +30,7 @@ signOut() {
 render() {
   return (
     <div className="buttons">
-      <button onClick={ this.signInWithPopUp }>Log In</button>
+      <button onClick={ this.signInWithPopup }>Log In</button>
       <button onClick={ this.signOut }>Log Out</button>
        <div>
           <p className="greeting">
