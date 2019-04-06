@@ -50,7 +50,7 @@ class MessageList extends Component {
             {this.state.messages.map( (message) => {
               if (message.roomId === this.props.activeRoom.key) {
                 return <li key={ message.key }>{ message.content } <br />
-                  <span><em>{ message.username }</em></span>
+                  <span><em>{ message.currentUser }</em></span>
                 </li>
               }
                 return (null);
