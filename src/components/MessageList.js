@@ -33,7 +33,7 @@ class MessageList extends Component {
   createMessage(e) {
     e.preventDefault();
     this.messagesRef.push({
-      username: "placeholder",
+      currentUser: this.props.currentUser ? this.props.currentUser.displayName : "Guest",
       content: this.state.content,
       sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
       roomId: this.props.activeRoom.key
@@ -50,7 +50,7 @@ class MessageList extends Component {
             {this.state.messages.map( (message) => {
               if (message.roomId === this.props.activeRoom.key) {
                 return <li key={ message.key }>{ message.content } <br />
-                  <span><em>{ message.username }</em></span>
+                  <span><em>{ message.currentUser }</em></span>
                 </li>
               }
                 return (null);

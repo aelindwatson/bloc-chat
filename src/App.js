@@ -41,14 +41,14 @@ class App extends Component {
     return (
       <div className="App">
         <h1 className="App-title">BLOC CHAT</h1>
-        <h2>{this.state.activeRoom.name || "Select Chat Room"}</h2>
+
         <aside id="sidebar">
           <RoomList firebase={firebase} setActiveRoom={this.setActiveRoom} />
           { this.state.activeRoom ?
-            (<MessageList firebase={firebase} activeRoom={this.state.activeRoom} username={this.state.user ? this.state.user.displayName : "Guest"}/>) : (null)
+            (<MessageList firebase={firebase} activeRoom={this.state.activeRoom} currentUser={this.state.currentUser}/>) : (null)
           }
         </aside>
-        <h2>Log In</h2>
+        <h3 className="chatRooms">{this.state.activeRoom.name || "Your Chat Rooms"}</h3>
         <User firebase={firebase} currentUser={this.state.currentUser} setUser={this.setUser}/>
       </div>
     );
