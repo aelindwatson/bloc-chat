@@ -33,7 +33,7 @@ class MessageList extends Component {
   createMessage(e) {
     e.preventDefault();
     this.messagesRef.push({
-      username: "placeholder",
+      username: this.props.username,
       content: this.state.content,
       sentAt: this.props.firebase.database.ServerValue.TIMESTAMP,
       roomId: this.props.activeRoom.key
