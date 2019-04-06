@@ -45,7 +45,7 @@ class App extends Component {
         <aside id="sidebar">
           <RoomList firebase={firebase} setActiveRoom={this.setActiveRoom} />
           { this.state.activeRoom ?
-            (<MessageList firebase={firebase} activeRoom={this.state.activeRoom} username={this.state.user ? this.state.user.displayName : "Guest"}/>) : (null)
+            (<MessageList firebase={firebase} activeRoom={this.state.activeRoom} currentUser={this.state.currentUser}/>) : (null)
           }
         </aside>
         <h2>Log In</h2>
