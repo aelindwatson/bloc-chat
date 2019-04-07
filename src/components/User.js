@@ -30,8 +30,10 @@ signOut() {
 render() {
   return (
     <div className="buttons">
-      <button onClick={ this.signInWithPopup }>Log In</button>
-      <button onClick={ this.signOut }>Log Out</button>
+      <button className="log-in-out" onClick={ this.props.currentUser ? this.signOut : this.signInWithPopup }>
+        <span>Log { this.props.currentUser ? 'Out' : 'In' }</span>
+      </button>
+
        <div>
           <p className="greeting">
             Welcome, {this.props.currentUser ? this.props.currentUser.displayName : "Guest"}!
